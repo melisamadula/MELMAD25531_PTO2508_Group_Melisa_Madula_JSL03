@@ -54,6 +54,7 @@ initialTasks.push(
 
 console.log(initialTasks);
 
+/*
 // Keep asking until the user enters a valid status for task
 while (addTask !== "done" && addTask !== "todo" && addTask !== "doing") {
   alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
@@ -75,3 +76,10 @@ else if (addTask === "done") {
     }
   });
 }
+*/
+
+// Displaying Alert Message for the last task added to the board
+const lastTask = initialTasks[initialTasks.length - 1];
+console.log("Last Task Added:");
+console.log(`- ${lastTask.title}: ${lastTask.description} (${lastTask.status})`);
+alert("These are your last tasks on your board, please check them on your console");
