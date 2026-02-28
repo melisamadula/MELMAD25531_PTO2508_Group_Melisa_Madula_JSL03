@@ -53,3 +53,25 @@ initialTasks.push(
 );
 
 console.log(initialTasks);
+
+// Keep asking until the user enters a valid status for task
+while (addTask !== "done" && addTask !== "todo" && addTask !== "doing") {
+  alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
+  addTask = prompt("Enter task status (todo, doing, done):").toLowerCase();
+}
+
+if (addTask === "done" || addTask === "todo" || addTask === "doing") {
+  console.log("All Tasks:");
+  initialTasks.forEach(task => {
+    console.log(`- ${task.title}: ${task.description} (${task.status})`);
+  });
+}
+
+else if (addTask === "done") {
+  console.log("Completed Tasks:");
+  initialTasks.forEach(task => {
+    if (task.status === "done") {
+      console.log(`- ${task.title}: ${task.description}`);
+    }
+  });
+}
